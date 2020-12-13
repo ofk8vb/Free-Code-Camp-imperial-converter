@@ -160,8 +160,9 @@ function ConvertHandler() {
     //   returnNum = parseInt(returnNum)
     // }
 
-    let spelledOutUnit = this.spellOutUnit(initUnit)
-    let result = `${initNum} ${initial_Units=spelledOutUnit} converts to ${returnNum} ${return_Units=returnUnit}`;
+    let spelledOutInitUnit = this.spellOutUnit(initUnit)
+    let spelledOutReturnUnit =this.spellOutUnit(returnUnit);
+    let result = `${initNum} ${initial_Units=spelledOutInitUnit} converts to ${returnNum} ${return_Units=spelledOutReturnUnit}`;
     
     return result;
   };
