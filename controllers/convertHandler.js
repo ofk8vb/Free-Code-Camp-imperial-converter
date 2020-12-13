@@ -127,22 +127,22 @@ function ConvertHandler() {
 
     switch(initUnit){
         case 'mi':
-                result = initNum*miToKm;
+                result = Number((initNum*miToKm).toFixed(5));
                 break;
               case 'km':
-                result = initNum/miToKm;
+                result = Number((initNum/miToKm).toFixed(5));
                 break;
               case 'lbs':
-                result = initNum*lbsToKg;
+                result = Number((initNum*lbsToKg).toFixed(5));
                 break;
               case 'kg':
-                result = initNum/lbsToKg;
+                result = Number((initNum/lbsToKg).toFixed(5));
                 break;
               case 'gal':
-                result = initNum*galToL;
+                result = Number((initNum*galToL).toFixed(5));
                 break;
               case 'L':
-                result = initNum/galToL;
+                result = Number((initNum/galToL).toFixed(5));
                 break;
               default:
                 break;
@@ -151,6 +151,8 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+
+    
     let numToReturn = returnNum;
     // if(returnNum.includes('.')){
     //   returnNum = parseFloat(returnNum);
@@ -158,8 +160,8 @@ function ConvertHandler() {
     //   returnNum = parseInt(returnNum)
     // }
 
-
-    let result = {initNum:initNum, initUnit:initUnit, returnNum:numToReturn, returnUnit: returnUnit,string:`${initNum} ${initial_Units=initUnit} converts to ${returnNum} ${return_Units=returnUnit}`};
+    let spelledOutUnit = this.spellOutUnit(initUnit)
+    let result = `${initNum} ${initial_Units=spelledOutUnit} converts to ${returnNum} ${return_Units=returnUnit}`;
     
     return result;
   };
