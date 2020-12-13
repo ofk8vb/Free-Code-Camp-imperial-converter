@@ -8,7 +8,7 @@
 
 function ConvertHandler() {
     const regexOnlyNumbers = /[\d\][\.\/]+/g
-    const regexOnlyCharacters = /[a-zA-Z]+/
+    const regexOnlyCharacters = /[a-zA-Z]+/g
     const units = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     
   this.getNum = function(input) {
@@ -49,11 +49,11 @@ function ConvertHandler() {
       return 'L'
     }
 
-    if(units.indexOf(input)===-1){
+    if(units.indexOf(result)===-1){
       return 'invalid unit'
     }
 
-    
+    console.log(result, ' result before returning get Unit')
     return result.toLowerCase();
   };
   
